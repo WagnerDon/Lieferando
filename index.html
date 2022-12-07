@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital@1&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="img/logo-on.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery</title>
+</head>
+
+<body id="body" onload="renderRestaurant(0)">
+    <!--Header-->
+    <div class="header box-shadow">
+        <a href="https://www.lieferando.at/lieferservice/essen/1030">
+            <div onmouseover="logo('bright')" onmouseleave="logo('reset')"
+                class="header-container flex-start column-gap20 cursor-pointer">
+                <img class="arrow" src="img/logo-back.png" alt="back">
+
+                <div class="center column-gap5">
+                    <img id="logo" class="box" src="img/logo-on.png" alt="logo">
+                    <h2><i>Delivery</i></h2>
+                </div>
+            </div>
+        </a>
+
+        <h4 id="menu" class="header-container">Speisekarte</h4>
+        <div class="header-container flex-end column-gap20">
+            <div onclick="toggle('language')" class="circle-effect center cursor-pointer">
+                <img id="flag" class="icon" src="img/germany.png" alt="language">
+                <!--Java Script-->
+            </div>
+
+            <div onclick="renderBurgerMenu()" class="circle-effect center cursor-pointer">
+                <img class="icon" src="img/menu.png" alt="menu">
+            </div>
+        </div>
+    </div>
+
+    <div class="display-flex-custom">
+
+        <div id="content" class="content"></div>
+
+        <div class="cart">
+            <div class="cart-content">
+                <h2 id="shopping-cart">Warenkorb</h2>
+                <div id="cart-content" class="render-card-content">
+                    <div class="dummy center center-column">
+                        <img class="icon-medium" src="img/cart.png" alt="cart">
+                        <h2 id="fill-cart">Fülle deinen Warenkorb</h2>
+                        <p id="add-food">Füge einige leckere Gerichte aus der Speisekarte hinzu und bestelle dein Essen
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <button class="reset-purchase border-radius10 cursor-pointer" onclick="resetPurchase()">Warenkorb
+                leeren</button>
+        </div>
+
+        <!--On Activation-->
+        <div class="small-cart" id="small-cart"></div>
+
+    </div>
+
+    <!--On Activation-->
+    <div id="language" class="languages column-gap20 border-radius10 display-none box-shadow">
+        <h3 id="languages">Sprachen</h3>
+
+        <div onclick="allLanguage('german')"
+            class="center flex-start column-gap20 cursor-pointer selection border-radius10">
+            <img src="img/germany.png" alt="language-de">
+            <div class="farbe">|</div>
+            <p>Deutsch</p>
+        </div>
+
+        <div onclick="allLanguage('english')"
+            class="center flex-start column-gap20 cursor-pointer selection border-radius10">
+            <img src="img/united-kingdom.png" alt="language-en">
+            <div class="farbe">|</div>
+            <p>English</p>
+        </div>
+
+        <div onclick="allLanguage('dutch')"
+            class="center flex-start column-gap20 cursor-pointer selection border-radius10">
+            <img src="img/netherlands.png" alt="language-nl">
+            <div class="farbe">|</div>
+            <p>Nederlands</p>
+        </div>
+
+        <div onclick="allLanguage('french')"
+            class="center flex-start column-gap20 cursor-pointer selection border-radius10">
+            <img src="img/france.png" alt="language-fr">
+            <div class="farbe">|</div>
+            <p>Français</p>
+        </div>
+
+        <div onclick="allLanguage('spanish')"
+            class="center flex-start column-gap20 cursor-pointer selection border-radius10">
+            <img src="img/spain.png" alt="language-es">
+            <div class="farbe">|</div>
+            <p>Espagnol</p>
+        </div>
+    </div>
+
+    <!--On Activation-->
+    <div id="black-screen" class="black-screen center display-none">
+        <div id="black-screen-content" class="menu border-radius10">
+
+        </div>
+    </div>
+</body>
+
+</html>
